@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rana Suppliers | Gitti, Baluwā, Dhunga & Itta</title>
+
+<style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #173449;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: #142d3d;
+    padding: 15px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    color: #ffb21b;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffb21b;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    background-image:
+        linear-gradient(
+            rgba(10, 30, 43, 0.45),
+            rgba(10, 30, 43, 0.45)
+        ),
+       url("images/background\ .jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 100px 20px 50px;
+}
+
+.hero-content {
+    color: white;
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #ffb21b;
+    color: #142d3d;
+}
+
+.btn-primary:hover {
+    background: #ffffff;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background: #1da851;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 80px 6%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: #173449;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #666;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+    background: #f5f7f8;
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #173449;
+}
+
+.product-info p {
+    color: #666;
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery {
+    background: white;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    height: 260px;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: #f5f7f8;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #173449;
+    color: white;
+}
+
+.contact .section-title h2 {
+    color: white;
+}
+
+.contact .section-title p {
+    color: #ddd;
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.contact-box {
+    background: rgba(255,255,255,0.08);
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-box h3 {
+    color: #ffb21b;
+    margin-bottom: 10px;
+}
+
+.contact-box p,
+.contact-box a {
+    color: white;
+}
+
+.contact-box a:hover {
+    color: #ffb21b;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #142d3d;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    nav {
+        position: relative;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding-top: 50px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 240px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        Rana Suppliers
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#products">Products</a>
+        </li>
+
+        <li>
+            <a href="#gallery">Photos</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>Rana Suppliers</h1>
+
+        <p>
+            Quality Gitti, Baluwā, Dhunga & Itta
+            for Your Construction Needs
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="tel:9847072685"
+                class="btn btn-primary">
+                📞 Call Now
+            </a>
+
+            <a
+                href="https://wa.me/9779847072685"
+                class="btn btn-whatsapp"
+                target="_blank">
+                WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section id="products" class="products">
+
+    <div class="section-title">
+
+        <h2>Our Products</h2>
+
+        <p>
+            Reliable construction materials for your projects
+        </p>
+
+    </div>
+
+
+    <div class="product-container">
+
+
+        <!-- GITTI -->
+
+        <div class="product-card">
+
+            <img
+                src="images/gitti2.jpg"
+                alt="Gitti Aggregate">
+
+            <div class="product-info">
+
+                <h3>Gitti</h3>
+
+                <p>
+                    Quality aggregate suitable for
+                    construction and concrete work.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BALUWA -->
+
+        <div class="product-card">
+
+            <img
+                src="images/baluwa.jpg"
+                alt="Baluwā Sand">
+
+            <div class="product-info">
+
+                <h3>Baluwā</h3>
+
+                <p>
+                    Quality sand for construction,
+                    concrete and masonry work.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DHUNGA -->
+
+        <div class="product-card">
+
+            <img
+                src="images/dhungaa.jpg"
+                alt="Dhunga Stone">
+
+            <div class="product-info">
+
+                <h3>Dhunga</h3>
+
+                <p>
+                    Strong and durable stone materials
+                    for different construction needs.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ITTA -->
+
+        <div class="product-card">
+
+            <img
+                src="images/itta.jpg"
+                alt="Itta Bricks">
+
+            <div class="product-info">
+
+                <h3>Itta</h3>
+
+                <p>
+                    Reliable bricks for walls and
+                    general building construction.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PHOTO GALLERY
+========================= -->
+
+<section id="gallery" class="gallery">
+
+    <div class="section-title">
+
+        <h2>Our Photos</h2>
+
+        <p>
+           Photos of our products and tractors
+        </p>
+
+    </div>
+
+
+    <div class="gallery-container">
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images/photo1.jpeg"
+                alt="Rana Suppliers Photo 1">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images/photo2.webp"
+                alt="Rana Suppliers Photo 2">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images/photo3.jpg"
+                alt="Rana Suppliers Photo 3">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images/photo4.jpeg"
+                alt="Rana Suppliers Photo 4">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images/photo5.jpeg"
+                alt="Rana Suppliers Photo 5">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images/photo6.jpeg"
+                alt="Rana Suppliers Photo 6">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="about">
+
+    <div class="section-title">
+
+        <h2>About Rana Suppliers</h2>
+
+    </div>
+
+
+    <div class="about-container">
+
+        <p>
+            Rana Suppliers is a construction material supplier based in Devinagar, Butwal, Nepal, with 15 years of experience.
+        </p>
+
+        <p>
+           We supply quality Gitti, Baluwā, Dhunga and Itta at the best price, carefully selected to meet our customers needs.
+        </p>
+        <p>
+          We deliver materials by Haiba trucks or tractors as required, and also provide tractors on rent.
+        </p>
+
+        <p>
+            Our goal is to provide quality construction
+            materials and dependable service to our customers.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Get in touch with Rana Suppliers
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <!-- PHONE -->
+
+        <div class="contact-box">
+
+            <h3>📞 Phone</h3>
+
+            <p>
+                <a href="tel:9847072685">
+                    9847072685
+                </a>
+            </p>
+
+        </div>
+
+
+
+        <!-- WHATSAPP -->
+
+        <div class="contact-box">
+
+            <h3>💬 WhatsApp</h3>
+
+            <p>
+
+                <a
+                    href="https://wa.me/9779847072685"
+                    target="_blank">
+
+                    Chat on WhatsApp
+
+                </a>
+
+            </p>
+
+        </div>
+
+
+
+        <!-- LOCATION -->
+
+       <!-- LOCATION -->
+
+<div class="contact-box">
+
+    <h3>📍 Location</h3>
+     <p>
+        Butwal, Yogikuti, Nepal
+     </p>
+  
+
+    <a
+        href="https://www.google.com/search?q=rana+gitti+baluwa+dhunga+mato+and+itta+suppliers&oq=ra&gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIICAEQRRgnGDsyBggCEEUYOTIPCAMQRRg7GIMBGLEDGIAEMgYIBBBFGDsyEggFEAAYQxiDARixAxiABBiKBTINCAYQABiDARixAxiABDIHCAcQABiABDITCAgQLhjHARixAxjRAxiABBiKBTINCAkQLhiDARixAxiABNIBCTExMzZqMGoxNagCCLACAQ&sourceid=chrome&source=chrome.rb&ie=UTF-8"
+        target="_blank"
+        class="btn btn-primary">
+
+        📍 Open in Google Maps
+
+    </a>
+
+</div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer style="background-color:#142d3d; color:#ffffff; width:100%; margin:0; padding:25px 10px; text-align:center; box-sizing:border-box;">
+
+    <div style="width:100%; text-align:center; margin:0 auto;">
+
+        <p style="margin:0 0 8px 0; padding:0; text-align:center; color:#ffffff;">
+            © 2026 Rana Suppliers. All Rights Reserved.
+        </p>
+
+        <p style="margin:0; padding:0; text-align:center; color:#ffffff;">
+            Gitti • Baluwā • Dhunga • Itta
+        </p>
+    </div>
+   
+
+</footer>
+
+</body>
+</html>
